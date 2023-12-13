@@ -38,22 +38,57 @@
                 <h1 class="sub-title">About Me</h1>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem suscipit molestias aliquam neque, nemo voluptatem minima dolores mollitia minus inventore magni, facere maiores? Nulla, dolorem impedit est tempore inventore recusandae?</p>
            <div class="tab-title">
-            <p class="tab-links  active-link">Skils</p>
-            <p class="tab-links">Experience</p>
-            <p class="tab-links">Education</p>
+            <p class="tab-links  active-link" onclick="opentab('skills')">Skils</p>
+            <p class="tab-links" onclick="opentab('languages')">Languages And Tools</p>
+            <p class="tab-links"onclick="opentab('education')">Education</p>
           
            </div>
 
-           <div class="tab-content">
+           <div class="tab-contents active-tab" id="skills">
             <ul>
                   <li><span>Backend Development</span><br>Hibernate,CRUD Operation,restAPI </li>
                   <li><span>Web Development</span><br>Web App Development</li>
             </ul>
            </div>
+
+           <div class="tab-contents" id="languages">
+            <ul>
+                  <li><span>Programming Languages</span><br>C,C++,Java</li>
+                  <li><span>Development Frameworks </span><br>Sping Boot,Bootstrap,React </li>
+                  <li><span>Others </span><br>Git & GitHub </li>
+            </ul>
+           </div>
+
+
+      
+
+           <div class="tab-contents"id="education">
+            <ul>
+                  <li><span>2023-current</span><br>MCA Kamla Nehru Institute Of Technology</li>
+                  <li><span>2018-2021</span><br>BCA Schhool Of Management Sciences</li>
+            </ul>
+           </div>
+
+
             </div>
         </div>
     </div>
 </div>
+<script>
+    var tablinks=document.getElementsByClassName("tab-links");
+    var tabcontents=document.getElementsByClassName("tab-contents");
 
+    function opentab(tabname)
+    {
+        for(tablink of tablinks){
+            tablink.classList.remove("active-links")
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab")
+        }
+        event.currentTarget.classList.add("active-links")
+        document.getElementById(tabname).classList.add("active-tab")
+    }
+</script>
 </body>
 </html>
